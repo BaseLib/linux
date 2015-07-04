@@ -20,7 +20,7 @@ shopt -s histappend
 
 #Local Env Variables 
 lscolor=" --color=auto"
-
+#export LS_OPTIONS='--color=auto -h'
 
 #user defined alias
 alias ag="alias | grep"
@@ -33,12 +33,30 @@ alias tree='tree -C'
 alias grep="grep --color=auto"
 alias egrep="egrep --color=auto"
 
+alias vi="vim"
+## Get server cpu info ##
+alias cpuinfo='lscpu'
+
+alias now='date +"%Y-%m-%d %T"'
+
+
 alias ..="cd ../"
 alias ...="cd ../../"
 alias ....="cd ../../../"
 
 # show how many processes each user is running
 alias procperuser='ps ax -o user | sort | uniq -c | sort -nr'
+
+
+#   ttop:  Recommended 'top' invocation to minimize resources
+#   ------------------------------------------------------------
+#       Taken from this macosxhints article
+#       http://www.macosxhints.com/article.php?story=20060816123853639
+#   ------------------------------------------------------------
+alias ttop="top -R -F -s 10 -o rsize"
+
+# Full Recursive Directory Listing
+alias lr='ls -R | grep ":$" | sed -e '\''s/:$//'\'' -e '\''s/[^-][^\/]*\//--/g'\'' -e '\''s/^/   /'\'' -e '\''s/-/|/'\'' | less'
 
 
 
