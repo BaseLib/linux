@@ -73,5 +73,11 @@ function tree(){
 	ls -R | grep ":$" |   \
 	sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'
 }
+#   my_ps: List processes owned by my user:
+#   ------------------------------------------------------------
+my_ps() { ps $@ -u $USER -o pid,%cpu,%mem,start,time,bsdtime,command ; }
+
+
+
 
 
