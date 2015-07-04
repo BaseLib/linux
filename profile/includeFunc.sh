@@ -59,4 +59,19 @@ macs () {
   done
 }
 
+# remind me, its important!
+# usage: remindme <time> <text>
+# e.g.: remindme 10m "omg, the pizza"
+function remindme()
+{
+    sleep $1 && zenity --info --text "$2" &
+}
+
+# Generates a tree view from the current directory
+function tree(){
+	pwd
+	ls -R | grep ":$" |   \
+	sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'
+}
+
 
