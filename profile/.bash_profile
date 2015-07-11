@@ -47,6 +47,10 @@ alias ....="cd ../../../"
 # show how many processes each user is running
 alias procperuser='ps ax -o user | sort | uniq -c | sort -nr'
 
+# Pretty-print of some PATH variables:
+alias path='echo -e ${PATH//:/\\n}'
+alias libpath='echo -e ${LD_LIBRARY_PATH//:/\\n}'
+
 
 #   ttop:  Recommended 'top' invocation to minimize resources
 #   ------------------------------------------------------------
