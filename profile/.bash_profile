@@ -3,13 +3,18 @@
 # don't put duplicate lines in the history or force ignoredups and ignorespace                                                                                                                                 
 export HISTSIZE=100000
 export HISTFILESIZE=1000000000
-HISTCONTROL=ignoredups:ignorespace          
+HISTCONTROL=ignoredups:ignorespace    
+
+# update history file after every command (not just on exit)
+export PROMPT_COMMAND='history -a'
 
 # don't record these commands in the history; who cares about ls?
 export HISTIGNORE='pwd:ls:history:'
 
 # append to the history file, don't overwrite it    
 shopt -s histappend 
+# useful history-related bash options: use one-line and append
+shopt -s cmdhist
 
 # see http://www.gnu.org/software/bash/manual/html_node/The-Shopt-Builtin.html#The-Shopt-Builtin
 #histappend histverify histreedit \
